@@ -3,9 +3,9 @@ package by.arc.week6
 import scala.util.Try
 
 object PhoneParser extends App {
+  val phoneRxp = """.+,\s*(\d{3})\s*-\s*(\d{3})\s*-\s*(\d{4})\s*,.+""".r
 
   def getPhoneData(s: String) = {
-    val phoneRxp = """.+,\s*(\d{3})\s*-\s*(\d{3})\s*-\s*(\d{4})\s*,.+""".r
     Try {
       val phoneRxp(first, second, third) = s
       (first.toInt, second.toInt, third.toInt)
